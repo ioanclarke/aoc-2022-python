@@ -1,14 +1,2 @@
-
-with open("input") as f:
-	content = f.read()
-
-totals = []
-
-calories_counts = content.split("\n\n")
-for counts in calories_counts:
-    total = sum(map(int, counts.split("\n")))
-    totals.append(total)
-
-totals.sort()
-print(totals[-1] + totals[-2] + totals[-3])    
+print((sorted_cals := sorted((sum(map(int, calories_indv.split("\n"))) for calories_indv in open("input").read().split("\n\n"))))[-1] + sorted_cals[-2] + sorted_cals[-3])
     
